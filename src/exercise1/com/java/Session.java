@@ -12,38 +12,38 @@ public class Session {
     //student add method
     public void addStudent(Student s){
         list.add(s);
-        Collections.sort(list);
+        // Collections.sort(list);
 
     }
     public void addFullTime(FullTime f){
         list.add(f);
-        Collections.sort(list);
+        // Collections.sort(list);
     }
 
-    //calculate average quiz score per student method
-    public void quizAver(Session se){
-        int sum = 0;
-        double aver = 0;
-        int count = list.size();//default(preferred) session size is 20.
-        for(Student s : list){
-            sum += s.QuizzesScore;
-            aver = sum / count;
-        }
-        System.out.println("-----------------------");
-        System.out.println("The average quiz score is: " + aver);
-    }
+    // //calculate average quiz score per student method
+    // public void quizAver(Session se){
+    //     int sum = 0;
+    //     double aver = 0;
+    //     int count = list.size();//default(preferred) session size is 20.
+    //     for(Student s : list){
+    //         sum += s.QuizzesScore;
+    //         aver = sum / count;
+    //     }
+    //     System.out.println("-----------------------");
+    //     System.out.println("The average quiz score is: " + aver);
+    // }
 
     //print the list of quiz scores in ascending order for one session
-    public void printQuiz(Session se){
-        System.out.println("-----------------------");
-        System.out.println("The list of quiz score is:");
-        Collections.sort(list);
+    // public void printQuiz(Session se){
+    //     System.out.println("-----------------------");
+    //     System.out.println("The list of quiz score is:");
+    //     // Collections.sort(list);
 
-        for(Student s : list){
-            System.out.println(list.indexOf(s)+ 1 + ".Name: " + s.Name + "  Score: " + s.QuizzesScore);
-        }
-        System.out.println("-----------------------");
-    }
+    //     for(Student s : list){
+    //         System.out.println(list.indexOf(s)+ 1 + ".Name: " + s.Name + "  Score: " + s.QuizzesScore);
+    //     }
+    //     System.out.println("-----------------------");
+    // }
 
     //method to print names of part-time students
     public void printPartime(Session se){

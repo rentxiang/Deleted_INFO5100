@@ -1,21 +1,22 @@
 package exercise1.com.java;
+import java.util.*;
 // import exercise1.com.java.*;
 
-public class Student implements Comparable<Student> {
+public class Student {
     String Name;
     String StudentType;
-    int QuizzesScore;
+    int[] QuizzesScore;
     //constructor
-    public Student(String Name, String StudentType, int QuizzesScore){
+    public Student(String Name, String StudentType){
         this.Name = Name;
         this.StudentType = StudentType;
-        this.QuizzesScore = QuizzesScore;
+        this.QuizzesScore = new int[15];
     }
 
-    @Override
-    public int compareTo(Student s){
-        return this.QuizzesScore - s.QuizzesScore;
-    }
+    // @Override
+    // public int compareTo(Student s){
+    //     return this.QuizzesScore - s.QuizzesScore;
+    // }
 
     public String getName() {
         return Name;
@@ -33,12 +34,24 @@ public class Student implements Comparable<Student> {
         StudentType = studentType;
     }
 
-    public int getQuizzesScore() {
-        return QuizzesScore;
+    public int getAverQuizzesScore() {
+        int sum =0;
+        for(int a:QuizzesScore){
+            sum += a;
+        }
+        return sum/15;
     }
 
-    public void setQuizzesScore(int quizzesScore) {
-        QuizzesScore = quizzesScore;
+    public void setQuizzesScore() {
+        Random rand = new Random();
+        for (int i = 0; i < QuizzesScore.length; i++) {
+            QuizzesScore[i] = rand.nextInt(100); // Generates a random integer between 0 and 99 (inclusive)
+        }       
     }
     
+    public int[] getAscQuiz(Student s){
+
+        Arrays.sort(s.QuizzesScore);
+        return s.QuizzesScore;
+    }
 }
